@@ -2,15 +2,18 @@ package com.mycompany.invoise.service;
 
 import com.mycompany.invoise.entity.Invoice;
 import com.mycompany.invoise.repository.InvoiceRepositoryInterface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
-import java.io.File;
-
+@Service
 public class InvoiceServicePrefix implements InvoiceServiceInterface {
-
+    @Value( "${invoice.lastNumber}" )
     private long   lastNumber;
+    @Value( "${invoice.prefix}" )
     private String prefix;
-    private File   file;
 
+    @Autowired
     private InvoiceRepositoryInterface invoiceRepository;
 
     public InvoiceRepositoryInterface getInvoiceRepository() {
@@ -42,11 +45,4 @@ public class InvoiceServicePrefix implements InvoiceServiceInterface {
         this.prefix = prefix;
     }
 
-    public File getFile() {
-        return file;
-    }
-
-    public void setFile( File file ) {
-        this.file = file;
-    }
 }

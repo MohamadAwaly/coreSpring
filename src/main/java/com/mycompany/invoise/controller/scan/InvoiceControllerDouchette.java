@@ -1,13 +1,12 @@
-package com.mycompany.invoise.controller;
+package com.mycompany.invoise.controller.scan;
 
+import com.mycompany.invoise.controller.InvoiceControllerInterface;
 import com.mycompany.invoise.entity.Invoice;
 import com.mycompany.invoise.service.InvoiceServiceInterface;
 import org.springframework.stereotype.Controller;
 
-import java.util.Scanner;
-@Controller
-public class InvoicecontrollerKeyboard implements InvoiceControllerInterface{
-
+//@Controller
+public class InvoiceControllerDouchette implements InvoiceControllerInterface {
     private InvoiceServiceInterface invoiceService;
 
     public InvoiceServiceInterface getInvoiceService() {
@@ -18,13 +17,11 @@ public class InvoicecontrollerKeyboard implements InvoiceControllerInterface{
         this.invoiceService = invoiceService;
     }
 
-    public void createInvoice(){
-        System.out.println("what is the customer name");
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
+    @Override
+    public void createInvoice() {
+        System.out.println("Usage of a scanner");
         Invoice invoice = new Invoice();
-        invoice.setCustomerName(name);
-
+        invoice.setCustomerName("Virigne Galatctic");
         invoiceService.createInvoice(invoice);
     }
 }

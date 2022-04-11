@@ -1,11 +1,15 @@
-package com.mycompany.invoise.controller;
+package com.mycompany.invoise.controller.web;
 
+import com.mycompany.invoise.controller.InvoiceControllerInterface;
 import com.mycompany.invoise.entity.Invoice;
 import com.mycompany.invoise.service.InvoiceServiceInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class InvoiceControllerDouchette implements InvoiceControllerInterface{
+public class InvoiceControllerWeb implements InvoiceControllerInterface {
+    @Autowired
     private InvoiceServiceInterface invoiceService;
 
     public InvoiceServiceInterface getInvoiceService() {
@@ -16,11 +20,16 @@ public class InvoiceControllerDouchette implements InvoiceControllerInterface{
         this.invoiceService = invoiceService;
     }
 
-    @Override
     public void createInvoice() {
-        System.out.println("Usage of a scanner");
+        String name = "Tesla";
         Invoice invoice = new Invoice();
-        invoice.setCustomerName("Virigne Galatctic");
+        invoice.setCustomerName(name);
         invoiceService.createInvoice(invoice);
+    }
+
+    @RequestMapping("/invoice-home")
+    public String displayHome() {
+        System.out.println("La méthode display home a était invoqué");
+        return "index";
     }
 }

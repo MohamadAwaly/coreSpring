@@ -7,7 +7,7 @@ public class MovieService {
 
     private MovieRepository movieRepository = new MovieRepository();
 
-    public void registerMovie(Movie movie){
+    public void registerMovie(Movie movie) {
         movieRepository.add(movie);
     }
 }

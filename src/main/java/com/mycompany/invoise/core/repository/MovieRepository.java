@@ -1,6 +1,6 @@
-package com.mycompany.invoise.repository;
+package com.mycompany.invoise.core.repository;
 
-import com.mycompany.invoise.entity.Movie;
+import com.mycompany.invoise.core.entity.Movie;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

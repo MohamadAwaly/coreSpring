@@ -1,6 +1,6 @@
-package com.mycompany.invoise.controller;
+package com.mycompany.invoise.core.controller;
 
-import com.mycompany.invoise.service.InvoiceServiceInterface;
+import com.mycompany.invoise.core.service.InvoiceServiceInterface;
 import org.springframework.stereotype.Controller;
 
 @Controller

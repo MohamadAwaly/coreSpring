@@ -1,7 +1,7 @@
-package com.mycompany.invoise.service;
+package com.mycompany.invoise.core.service;
 
-import com.mycompany.invoise.entity.Movie;
-import com.mycompany.invoise.repository.MovieRepository;
+import com.mycompany.invoise.core.entity.Movie;
+import com.mycompany.invoise.core.repository.MovieRepository;
 
 public class MovieService {
 

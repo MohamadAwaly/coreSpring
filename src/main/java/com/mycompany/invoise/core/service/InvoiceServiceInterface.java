@@ -8,5 +8,6 @@ import java.util.List;
 public interface InvoiceServiceInterface {
     void createInvoice(Invoice invoice);
     void setInvoiceRepository(InvoiceRepositoryInterface invoiceRepository);
+    Invoice getInvoiceByNumber (String number);
     List<Invoice> getInvoiceList();
 }

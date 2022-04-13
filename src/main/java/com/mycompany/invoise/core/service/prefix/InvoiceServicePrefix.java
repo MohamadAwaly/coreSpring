@@ -38,6 +38,9 @@ public class InvoiceServicePrefix implements InvoiceServiceInterface {
     @Override public List<Invoice> getInvoiceList() {
         return invoiceRepository.list();
     }
+    @Override public Invoice getInvoiceByNumber( String number ) {
+        return invoiceRepository.getById(number);
+    }
 
     public long getLastNumber() {
         return lastNumber;

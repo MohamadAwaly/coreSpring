@@ -30,9 +30,10 @@ public class InvoiceServicePrefix implements InvoiceServiceInterface {
 
 
 
-    public void createInvoice(Invoice invoice) {
+    public Invoice createInvoice(Invoice invoice) {
         invoice.setNumber(String.valueOf(prefix + (++lastNumber)));
         invoiceRepository.create(invoice);
+        return invoice;
     }
 
     @Override public List<Invoice> getInvoiceList() {
